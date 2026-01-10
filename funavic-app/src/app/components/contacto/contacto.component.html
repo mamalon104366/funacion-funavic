@@ -1,0 +1,73 @@
+<section class="contacto-section">
+  <div class="contacto-container">
+    <div class="contacto-header">
+      <h2 class="titulo">Contáctanos</h2>
+      <p class="subtitulo">Estamos aquí para ayudarte. Envíanos un mensaje y te responderemos pronto.</p>
+    </div>
+
+    <div class="mensaje-exito" *ngIf="mensajeExito">
+      <svg class="icono-exito" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <p>¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.</p>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contacto-form">
+      <div class="form-group">
+        <label for="nombreCompleto">Nombre Completo <span class="required">*</span></label>
+        <input
+          type="text"
+          id="nombreCompleto"
+          formControlName="nombreCompleto"
+          class="form-control"
+          [class.invalid]="submitted && f['nombreCompleto'].errors"
+          placeholder="Ingresa tu nombre completo"
+        />
+        <div class="error-message" *ngIf="submitted && f['nombreCompleto'].errors">
+          <span *ngIf="f['nombreCompleto'].errors['required']">El nombre es requerido</span>
+          <span *ngIf="f['nombreCompleto'].errors['minlength']">El nombre debe tener al menos 3 caracteres</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo Electrónico <span class="required">*</span></label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+          [class.invalid]="submitted && f['email'].errors"
+          placeholder="tu&#64;email.com"
+        />
+        <div class="error-message" *ngIf="submitted && f['email'].errors">
+          <span *ngIf="f['email'].errors['required']">El correo es requerido</span>
+          <span *ngIf="f['email'].errors['email']">Ingresa un correo válido</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje <span class="required">*</span></label>
+        <textarea
+          id="mensaje"
+          formControlName="mensaje"
+          class="form-control textarea"
+          [class.invalid]="submitted && f['mensaje'].errors"
+          placeholder="Escribe tu mensaje aquí..."
+          rows="6"
+        ></textarea>
+        <div class="error-message" *ngIf="submitted && f['mensaje'].errors">
+          <span *ngIf="f['mensaje'].errors['required']">El mensaje es requerido</span>
+          <span *ngIf="f['mensaje'].errors['minlength']">El mensaje debe tener al menos 10 caracteres</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-enviar" [disabled]="enviando">
+        <span *ngIf="!enviando">Enviar Mensaje</span>
+        <span *ngIf="enviando" class="loading">
+          <span class="spinner"></span>
+          Enviando...
+        </span>
+      </button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+.hero {
+  height: 100vh; /* más impacto visual */
+  background-image: url('/assets/amazonas.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* efecto parallax suave */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 59, 102, 0.6);
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+/* overlay centrado con flex */
+.overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* título grande y con sombra para destacar */
+.overlay h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+/* párrafo más elegante y legible */
+.overlay p {
+  max-width: 700px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+  margin-bottom: 30px;
+}
+
+/* botón de acción llamativo */
+.overlay .btn {
+  padding: 12px 30px;
+  background: #ff9800;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.overlay .btn:hover {
+  background: #e68900;
+  transform: scale(1.05);
+}

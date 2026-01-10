@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <div class="logo-area">
+      <img src="assets/logo-fundacion.png" alt="FUNAVIC Amazonas" class="logo" />
+
+      <span>FUNAVIC</span>
+    </div>
+
+    <!-- BOTÓN MOBILE -->
+    <button class="menu-btn" (click)="toggleMenu()">☰</button>
+
+    <!-- NAV -->
+    <nav [class.open]="menuOpen">
+      <a routerLink="/" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/" fragment="mision" (click)="closeMenu()">Misión</a>
+      <a routerLink="/" fragment="vision" (click)="closeMenu()">Visión</a>
+      <a routerLink="/" fragment="proyectos" (click)="closeMenu()">Programas</a>
+      <a routerLink="/" fragment="contacto" class="btn-contact" (click)="closeMenu()">Contacto</a>
+    </nav>
+
+  </div>
+</header>

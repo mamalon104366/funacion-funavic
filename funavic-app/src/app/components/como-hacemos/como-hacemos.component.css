@@ -1,0 +1,190 @@
+.como-section {
+  padding: 100px 20px;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.como-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-como {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.titulo-como {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 25px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitulo-como {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #5a6c7d;
+  margin: 0;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.metodologias-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.metodologia-item {
+  background: white;
+  border-radius: 16px;
+  padding: 45px 50px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.metodologia-item:last-child {
+  margin-bottom: 0;
+}
+
+.metodologia-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.numero-badge {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.metodologia-item:hover .numero-badge {
+  transform: scale(1.1);
+}
+
+.numero-badge span {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+}
+
+.contenido {
+  flex: 1;
+}
+
+.metodo-titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+}
+
+.metodo-descripcion {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #5a6c7d;
+  margin: 0;
+  font-weight: 300;
+}
+
+.linea-conectora {
+  position: absolute;
+  width: 4px;
+  height: 40px;
+  left: 94px;
+  bottom: -40px;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .como-section {
+    padding: 60px 20px;
+  }
+
+  .header-como {
+    margin-bottom: 50px;
+  }
+
+  .titulo-como {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo-como {
+    font-size: 1.1rem;
+  }
+
+  .metodologia-item {
+    padding: 35px 25px;
+    gap: 25px;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .numero-badge {
+    width: 80px;
+    height: 80px;
+  }
+
+  .numero-badge span {
+    font-size: 1.8rem;
+  }
+
+  .metodo-titulo {
+    font-size: 1.5rem;
+  }
+
+  .metodo-descripcion {
+    font-size: 1rem;
+  }
+
+  .linea-conectora {
+    display: none;
+  }
+
+  .metodologia-item:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-como {
+    font-size: 2rem;
+  }
+
+  .subtitulo-como {
+    font-size: 1rem;
+  }
+
+  .metodologia-item {
+    padding: 30px 20px;
+  }
+
+  .numero-badge {
+    width: 70px;
+    height: 70px;
+  }
+
+  .numero-badge span {
+    font-size: 1.5rem;
+  }
+
+  .metodo-titulo {
+    font-size: 1.3rem;
+  }
+}

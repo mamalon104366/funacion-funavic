@@ -1,0 +1,170 @@
+.hacemos-section {
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.hacemos-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 25px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #5a6c7d;
+  margin: 0;
+  font-weight: 300;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.area-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.area-card:hover::before {
+  opacity: 1;
+}
+
+.icono-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  transition: transform 0.4s ease;
+}
+
+.area-card:hover .icono-container {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.icono {
+  font-size: 3rem;
+  filter: grayscale(100%) brightness(200%);
+}
+
+.area-titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+}
+
+.area-descripcion {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5a6c7d;
+  margin: 0;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .titulo {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hacemos-section {
+    padding: 60px 20px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1.1rem;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .area-card {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .icono-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icono {
+    font-size: 2.5rem;
+  }
+
+  .area-titulo {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,21 @@
+<section class="hacemos-section">
+  <div class="hacemos-container">
+    <div class="header">
+      <h2 class="titulo">¿Qué Hacemos?</h2>
+      <p class="subtitulo">
+        Trabajamos en cuatro áreas fundamentales para el desarrollo sostenible 
+        de la región amazónica y el fortalecimiento de las comunidades indígenas.
+      </p>
+    </div>
+
+    <div class="areas-grid">
+      <div class="area-card" *ngFor="let area of areas" [style.border-color]="area.color">
+        <div class="icono-container" [style.background]="area.color">
+          <span class="icono">{{ area.icono }}</span>
+        </div>
+        <h3 class="area-titulo" [style.color]="area.color">{{ area.titulo }}</h3>
+        <p class="area-descripcion">{{ area.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</section>

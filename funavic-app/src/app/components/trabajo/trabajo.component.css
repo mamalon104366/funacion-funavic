@@ -1,0 +1,187 @@
+.carousel-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.nav-btn:hover {
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn svg {
+  color: #333;
+}
+
+.carousel-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.trabajo-card {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.imagen-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 400px;      /* ancho fijo */
+  height: 250px;
+}
+
+.imagen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+
+.imagen-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+
+
+.imagen-container:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 30px 20px 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.imagen-container:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.overlay p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.indicador {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicador:hover {
+  border-color: #666;
+  transform: scale(1.2);
+}
+
+.indicador.active {
+  background: #333;
+  border-color: #333;
+}
+
+@media (max-width: 1024px) {
+  .carousel-track {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .trabajo-card:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .titulo-seccion {
+    font-size: 2rem;
+  }
+  
+  .carousel-track {
+    grid-template-columns: 1fr;
+  }
+  
+  .trabajo-card:nth-child(2),
+  .trabajo-card:nth-child(3) {
+    display: none;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

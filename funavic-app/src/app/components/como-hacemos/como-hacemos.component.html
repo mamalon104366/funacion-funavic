@@ -1,0 +1,24 @@
+<section class="como-section">
+  <div class="como-container">
+    <div class="header-como">
+      <h2 class="titulo-como">¿Cómo lo Hacemos?</h2>
+      <p class="subtitulo-como">
+        Nuestra metodología de trabajo se basa en tres pilares fundamentales 
+        que garantizan el impacto positivo en las comunidades.
+      </p>
+    </div>
+
+    <div class="metodologias-list">
+      <div class="metodologia-item" *ngFor="let metodo of metodologias; let i = index">
+        <div class="numero-badge" [style.background]="metodo.color">
+          <span>{{ metodo.numero }}</span>
+        </div>
+        <div class="contenido">
+          <h3 class="metodo-titulo">{{ metodo.titulo }}</h3>
+          <p class="metodo-descripcion">{{ metodo.descripcion }}</p>
+        </div>
+        <div class="linea-conectora" *ngIf="i < metodologias.length - 1" [style.background]="metodo.color"></div>
+      </div>
+    </div>
+  </div>
+</section>

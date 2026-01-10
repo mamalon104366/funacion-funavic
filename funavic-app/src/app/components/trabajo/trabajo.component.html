@@ -1,0 +1,39 @@
+<div class="carousel-container">
+  <h2 class="titulo-seccion">Nuestros Trabajos</h2>
+  
+  <div class="carousel">
+    <button class="nav-btn prev" (click)="anterior()" aria-label="Anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="carousel-track">
+      <div class="trabajo-card" *ngFor="let trabajo of trabajosVisibles">
+        <div class="imagen-container">
+          <img [src]="trabajo.imagen" [alt]="trabajo.titulo" />
+          <div class="overlay">
+            <h3>{{ trabajo.titulo }}</h3>
+            <p>{{ trabajo.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav-btn next" (click)="siguiente()" aria-label="Siguiente">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <div class="indicadores">
+    <button 
+      *ngFor="let trabajo of trabajos; let i = index"
+      class="indicador"
+      [class.active]="i === indiceActual"
+      (click)="irA(i)"
+      [attr.aria-label]="'Ir al trabajo ' + (i + 1)">
+    </button>
+  </div>
+</div>
